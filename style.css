@@ -1,0 +1,23 @@
+#form{
+    width: 15%;
+}
+#tabellaProdotti{
+    width: 75%;
+}
+
+#prodotti .card{
+    background-color: #F9F9F9;
+}
+
+#contenutoCarrello{
+    background-color:#F9F9F9 ;
+}
+
+.overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #00000080; 
+    height: 100vh;
+    width: 100%;
+}
