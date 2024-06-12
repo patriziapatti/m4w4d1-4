@@ -170,7 +170,6 @@ function chiudiModal(){
     overlay.classList.add("d-none")
     let editModal = document.getElementById("editModal")
     editModal.classList.add("d-none")
-    
 }
 
 function confermaEliminazione(id){
