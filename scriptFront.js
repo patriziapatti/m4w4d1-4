@@ -34,6 +34,7 @@ function aggiungiAlCarrello(name,price){
     let newLi = document.createElement("li")
     newLi.innerHTML ="<p>Racchetta: <span class='fw-bold'>" + name + "</span>; Prezzo: <span class='fw-bold'>" + price + "€</span>"
     sezioneCarrello.appendChild(newLi) 
+    alert("Prodotto aggiunto al carrello")
     carrello.push(name)
     // console.log(carrello)
     //console.log(carrello.length)

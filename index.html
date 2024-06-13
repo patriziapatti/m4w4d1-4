@@ -106,7 +106,7 @@
         class="mb-2 form-control border-1 rounded border-secondary-subtle">
       <button id="btn" class="mt-2 border-1 btn btn-success " onclick="aggiungiProdotto()">Aggiungi Prodotto</button>
       <a id="vaiMarket" class=" btn btn-dark mt-2 border-1 " href="./frontend.html" target="_blank">Vai al
-          Marketplace</a>
+        Marketplace</a>
     </div>
     <div id="tabellaProdotti" class="ms-5 mt-3 table-responsive">
       <h2>Lista prodotti inseriti</h2>
@@ -179,6 +179,24 @@
       </div>
     </div>
   </div>
+  </div>
+
+  <div id="renderModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modal-title" class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            onclick="chiudiModal()"></button>
+        </div>
+        <div id="modal-body" class="modal-body">
+        </div>
+        <div id="modal-footerR" class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="overlay" class="overlay d-none"></div>

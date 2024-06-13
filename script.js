@@ -1,54 +1,4 @@
 let url ="https://striveschool-api.herokuapp.com/api/product/"
-// let prodottoDaAggiungere = {
-//     name: "prodotto1",
-//     description: "descrizione1",
-//     brand: "brand1",
-//     imageUrl: "immagine1",
-//     price:100
-//   }
-
-// document.addEventListener("DOMContentLoaded", async() => {
-//     await aggiungi(prodottoDaAggiungere)
-//     await eliminaElemento("666777fa7f6b4b0015428ff5")
-//     await fetch (url, {
-//         headers: {
-//         authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjY3NjJlNDdmNmI0YjAwMTU0MjhmZTAiLCJpYXQiOjE3MTgwNTE1NTYsImV4cCI6MTcxOTI2MTE1Nn0.hkWYZO_0n-vxJug3w9hsncGK_68c0_Kq_YMHmtSKgG4",
-//         "content-type": "application/json"
-//         }
-//     })  
-//     .then(response => {
-//         //console.log(response)
-//        response.json().then(data=>{
-//             console.log(data)
-//         })
-//       })  
-//     })
-
-//     let aggiungi = async function(prodotto){  //do un nome alla funzione così posso richiamarla dovunque - funzione asincrona
-//      fetch(url,{
-//         method: "POST",
-//         headers: {
-//             authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjY3NjJlNDdmNmI0YjAwMTU0MjhmZTAiLCJpYXQiOjE3MTgwNTE1NTYsImV4cCI6MTcxOTI2MTE1Nn0.hkWYZO_0n-vxJug3w9hsncGK_68c0_Kq_YMHmtSKgG4",
-//             "content-type": "application/json"
-//             },
-//             body: JSON.stringify(prodotto)
-//      }).then(response=>{
-//         console.log(response)
-//      })
-//     }
-
-//     let eliminaElemento = async function(id){ 
-//         fetch(url +id,{
-//            method: "DELETE",
-//            headers: {
-//                authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjY3NjJlNDdmNmI0YjAwMTU0MjhmZTAiLCJpYXQiOjE3MTgwNTE1NTYsImV4cCI6MTcxOTI2MTE1Nn0.hkWYZO_0n-vxJug3w9hsncGK_68c0_Kq_YMHmtSKgG4",
-//                "content-type": "application/json"
-//                }
-//         }).then(response=>{
-//            console.log(response)
-//         })
-//        }
-
 function aggiungiProdotto(){
     let getName = document.getElementById("name").value
     let getDescription = document.getElementById("description").value
@@ -56,6 +6,7 @@ function aggiungiProdotto(){
     let getPrice = document.getElementById("price").value
     let getImg = document.getElementById("image").value
 
+    if((getName !== "" )&&(getDescription !== "" )&&(getBrand !== "" )&&(getPrice !== "" )&&(getImg !== "" )){
     fetch(url,{
         method: "POST",
         headers: {
@@ -72,15 +23,23 @@ function aggiungiProdotto(){
     }).then(response=>{
         //console.log(response)
         if(response.status === 200){
-            alert("Prodotto Aggiunto")
+            //alert("Prodotto Aggiunto")
+            risultati()
+            pulisciForm()
+            renderModal("complimenti","Prodotto aggiunto")
            // console.log("prodotto aggiunto")
-           risultati()
-           pulisciForm()
+           //risultati()
+           //pulisciForm()
         }else{
-           alert("Impossibile inserire il prodotto")
+            renderModal("Errore","Impossibile aggiungere prodotto")
+          // alert("Impossibile inserire il prodotto")
            //console.log("prodotto già esistente")
         }
         })
+    }else{
+        renderModal("Attenzione","Tutti i campi sono obbligatori",["ok","chiudiModal()"])
+        //alert("Tutti i campi sono obbligatori")
+    }
 }
 
 document.addEventListener("DOMContentLoaded",() => {
@@ -170,6 +129,8 @@ function chiudiModal(){
     overlay.classList.add("d-none")
     let editModal = document.getElementById("editModal")
     editModal.classList.remove("d-block")
+    let renderModal = document.getElementById("renderModal")
+    renderModal.classList.remove("d-block")
 }
 
 function confermaEliminazione(id){
@@ -184,6 +145,7 @@ function confermaEliminazione(id){
           // console.log(response)
           if(response.status === 200 || response.status ===204){
             chiudiModal()
+            alert("Prodotto eliminato")
            // console.log("prodotto aggiunto")
            risultati()
         }else{
@@ -230,4 +192,19 @@ function confermaEliminazione(id){
     document.getElementById("image").value = ""
  }
 
+
+function renderModal(title,body,ok,canc){
+  
+    
+    // <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    //       <button type="button" class="btn btn-primary">Save changes</button>
+    let modal = document.getElementById("renderModal")
+    modal.classList.add("d-block")
+    document.querySelector("#modal-title").innerHTML = title
+    document.querySelector("#modal-body").innerHTML = body
+
+    if(ok!==null){
+        document.querySelector("#modal-footerR").innerHTML = `<button type="button" class="btn btn-primary" onclick="${ok[1]}">${ok[0]}</button>`
+    }
+}
 

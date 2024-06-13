@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     //console.log(data._id)
     let container =""  
  
-    container += `<div id="${data._id}" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="card m-2 " ><div class="card-body text-center"><img src="${data.imageUrl}"class="card-img-top" style="width: 250px; height: 250px"/>
+    container += `<div class="d-flex justify-content-center"><div id="${data._id}">
+            <div class="card m-2"><div class="card-body text-center"><img src="${data.imageUrl}"class="card-img-top" style="width: 250px; height: 250px"/>
                 <h5 class="card-title">${data.name}</h5><h6 class="card-subtitle mb-2 text-body-secondary">${data.brand}</h6><p class="card-text">${data.description}</p><p class="card-text">${data.price}€</p><p class="card-text d-none">${data._id}</p>
                 </div>
             </div>
-        </div>`
+        </div></div>`
  
          document.getElementById("schedaArticolo").innerHTML+=container
      })
