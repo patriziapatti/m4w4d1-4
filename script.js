@@ -169,7 +169,7 @@ function chiudiModal(){
     let overlay=document.getElementById("overlay")
     overlay.classList.add("d-none")
     let editModal = document.getElementById("editModal")
-    editModal.classList.add("d-none")
+    editModal.classList.remove("d-block")
 }
 
 function confermaEliminazione(id){

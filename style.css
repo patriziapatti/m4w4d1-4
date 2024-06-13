@@ -9,9 +9,9 @@
     background-color: #F9F9F9;
 }
 
-#contenutoCarrello{
+/* #contenutoCarrello{
     background-color:#F9F9F9 ;
-}
+} */
 
 h1{
     
@@ -47,4 +47,25 @@ h1{
 
 #vaiMarket a{
     text-decoration: none;
+}
+
+footer{
+    margin-bottom: 0;
+    background-color: #F8F9FA;
+}
+
+footer ul{
+    list-style: none;
+
+}
+
+footer a:link{
+    color: gray;
+}
+
+footer a:visited{
+    color: gray;
+}
+footer p{
+    color: gray;
 }

@@ -1,98 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary w-100 ">
-            <div class="container-fluid ">
-                <div class="d-flex">
-                  <a class="navbar-brand" href="#">
-                    <img src="data:image/png;base64,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" alt="PadelLogo" width="50" height="50">
-                  </a>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Browse
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Browse1</a></li>
-                          <li><a class="dropdown-item" href="#">Browse2</a></li>
-                          <li><a class="dropdown-item" href="#">Browse3</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Landings
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Landings1</a></li>
-                          <li><a class="dropdown-item" href="#">Landings2</a></li>
-                          <li><a class="dropdown-item" href="#">Landings3</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Pages1</a></li>
-                          <li><a class="dropdown-item" href="#">Pages2</a></li>
-                          <li><a class="dropdown-item" href="#">Pages3</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Accounts
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Accounts1</a></li>
-                          <li><a class="dropdown-item" href="#">Accounts2</a></li>
-                          <li><a class="dropdown-item" href="#">Accounts3</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              <div>
-                    <i class="fa-regular fa-bell p-2"></i>
-                     <i id="avatar1"  class="fa-solid fa-user me-4"></i>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </div>
-            </div>
-          </nav>
-    </header>
-    <h1 class="pt-3 pb-3 text-center mb-3">Padel Marketplace</h1>
-    <div id="contenutoCarrello" class="ms-3 mb-2 border border-1 rounded w-25 p-3">
-        <h5 id="tuoCarrello">Il tuo carrello <span id="contatoreCarrello">(0)</span></h5>
-        <div id="totale"></div>
-        <ul id="listaCarrello"></ul>
-        <button id="svuota" type="button" class="btn btn-warning" onclick="svuotaCarrello()">Svuota il carrello</button>
-      </div>
-      <div class="contenitore d-flex flex-wrap justify-content-center"></div>
-    <div>
-        <div class="container-fluid">
-            <div id="prodotti" class="row ">
-            </div>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary w-100 ">
+      <div class="container-fluid ">
+        <div class="d-flex">
+          <a class="navbar-brand" href="#">
+            <img
+              src="data:image/png;base64,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"
+              alt="PadelLogo" width="50" height="50">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Browse
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Browse1</a></li>
+                  <li><a class="dropdown-item" href="#">Browse2</a></li>
+                  <li><a class="dropdown-item" href="#">Browse3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Landings
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Landings1</a></li>
+                  <li><a class="dropdown-item" href="#">Landings2</a></li>
+                  <li><a class="dropdown-item" href="#">Landings3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Pages
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Pages1</a></li>
+                  <li><a class="dropdown-item" href="#">Pages2</a></li>
+                  <li><a class="dropdown-item" href="#">Pages3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Accounts
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Accounts1</a></li>
+                  <li><a class="dropdown-item" href="#">Accounts2</a></li>
+                  <li><a class="dropdown-item" href="#">Accounts3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
+        <div>
+          <i class="fa-regular fa-bell p-2"></i>
+          <i id="avatar1" class="fa-solid fa-user me-4"></i>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <h1 class="pt-3 pb-3 text-center mb-3">Padel Marketplace</h1>
+  <a class="btn btn-danger ms-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+    aria-controls="offcanvasExample">
+    Il tuo carrello <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-cart2" viewBox="0 0 16 16">
+      <path
+        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+    </svg> <span id="contatoreCarrello">(0)</span>
+  </a>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Il tuo carrello <svg xmlns="http://www.w3.org/2000/svg"
+          width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+          <path
+            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+        </svg></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-  
+    <div class="offcanvas-body">
+      <div id="contenutoCarrello">
+
+        <div>
+          <p id="totale"></p>
+        </div>
+        <ul id="listaCarrello"></ul>
+        <button id="svuota" type="button" class="btn btn-warning" onclick="svuotaCarrello()">Svuota</button>
+      </div>
+    </div>
+  </div>
 
 
+  <div class="contenitore d-flex flex-wrap justify-content-center"></div>
+  <div>
+    <div class="container-fluid">
+      <div id="prodotti" class="row ">
+      </div>
+    </div>
+  </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/scriptFront.js"></script>
+  <footer class="mt-3">
+    <div class="container-fluid mb-2 ms-4 ">
+      <div class="row d-flex ">
+        <div class="col-3  ps-0">
+          <ul class="d-flex flex-column justify-content-center pt-3">
+            <li class=" pb-1"><a href="#">Contattaci</a></li>
+            <li class=" pb-1"><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="col-3 ps-0">
+          <ul class="d-flex flex-column pt-3 ">
+            <li class=" pb-1"><a href="#">Spedizione</a></li>
+            <li class=" pb-1"><a href="#">Resi</a></li>
+          </ul>
+        </div>
+        <div class="col-3 ps-0">
+          <ul class="d-flex flex-column  pt-3">
+            <li class=" pb-1"><a href="#">Buoni regalo</a></li>
+            <li class=" pb-1"><a href="#">Condizioni</a></li>
+
+          </ul>
+        </div>
+        <div class="col-3 ps-0">
+          <ul class="d-flex flex-column pt-3 ">
+            <li class=" pb-1"><a href="#">Lavora con noi</a></li>
+            <li class=" pb-1"><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <p class="mb-0 ps-3 pb-3"><i class="fa-regular fa-copyright ps-3"></i> 2021 PadelMarketplace, PIVA01234545d3 </p>
+    </div>
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="/scriptFront.js"></script>
 </body>
+
 </html>
